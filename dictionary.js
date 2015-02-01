@@ -21,8 +21,10 @@ function remove(key) {
 }
 
 function showAll() {
- for (var key in this.datastore) {
- print(key + " -> " + this.datastore[key]);
+ var keys = Object.keys(this.datastore);
+ keys.sort();
+ for (var i = 0; i < keys.length; i++) {
+ print(keys[i] + " -> " + this.datastore[keys[i]]);
  }
 }
 
